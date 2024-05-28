@@ -26,3 +26,6 @@ const currentUrl = window.location.href;
 
 const ogUrlElement = document.getElementById('og-url');
 ogUrlElement.content = currentUrl;
+
+const mobileMenu = document.getElementById('mobile-menu');
+const nav = document.getElementById('nav');

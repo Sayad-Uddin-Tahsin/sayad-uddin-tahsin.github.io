@@ -4,6 +4,10 @@
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     color: #333;
+    --primary-color: #2E8B57;
+    /* Dark green */
+    --button-color: #4682B4;
+    /* Steel blue */
 }
 
 body {
@@ -58,15 +62,22 @@ body {
     margin-top: 30px;
 }
 
-.btn {
-    text-decoration: none;
-    color: #fff;
-    background-color: #007BFF;
-    /* Blue background */
+.rounded-btn {
+    display: inline-block;
     padding: 10px 20px;
-    border-radius: 5px;
     margin-right: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #fff; /* Darker text color */
+    transition: background-color 0.3s, color 0.3s;
 }
+
+.rounded-btn:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+
 
 .intro-image {
     max-width: 40%;
@@ -121,6 +132,11 @@ section {
         max-width: 100%;
     }
 
+    .intro-text h1 {
+        font-size: 2em;
+        /* Smaller font size for mobile */
+    }
+
     .profile-pic {
         width: 200px;
         /* Adjust image size for mobile */
@@ -154,65 +170,129 @@ footer {
     justify-content: center;
 }
 
-:root {
-    /* Base styles */
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    /* Light gray background */
-    color: #333;
+main {
+    padding: 40px 0;
 }
 
 header {
     background-color: #000;
-    /* Black header */
     color: #fff;
     padding: 15px 0;
-    display: flex;
-    /* Make header a flexbox container */
+    text-align: left;
 }
 
-.header-content {
+header .header-content {
     display: flex;
-    /* Make content a flexbox container */
+    justify-content: space-between;
     align-items: center;
-    /* Align items vertically */
-    width: 100%;
-    /* Set width to 100% for proper alignment */
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.logo {
-    flex: 1;
-    /* Allow logo to grow and fill remaining space */
-    text-decoration: none;
-    /* Remove underline from link */
+header .logo {
     color: #fff;
-    /* Make logo text white to match header color */
+    text-decoration: none;
+    font-size: 1.5em;
     font-weight: bold;
-    margin-left: 10px;
-    font-size: 18px;
 }
 
-nav {
+.about-black-region {
+    background-color: #000;
+    /* Black background */
+    color: #fff;
+    height: 25vh;
+    /* Full screen height */
     display: flex;
-    justify-content: flex-end;
-    /* Align navigation items to the right */
+    align-items: center;
+    justify-content: center;
+    /* Center content horizontally */
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.skills,
+.hobbies,
+.expreiences,
+.reach-me-at {
+    margin-bottom: 40px;
+    text-align: left;
 }
 
-nav li {
-    display: inline-block;
-    margin-right: 20px;
+.skills .skill-list li {
+    padding: 5px;
+    border-radius: 5px;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
+.experience {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.experience-title {
+    font-size: 1.3em;
     font-weight: bold;
 }
 
+.experience-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.experience-duration {
+    font-size: 1em;
+    color: #888;
+}
+
+.experience-company {
+    font-size: 1em;
+    font-style: italic;
+    margin-top: 0.7em;
+}
+
+
+.experience-button {
+    background-color: var(--button-color);
+    /* Use custom button color */
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Ensure the button expands horizontally */
+.experience-button {
+    flex-grow: 1;
+    margin-left: 10px;
+    /* Adjust margin as needed */
+}
+
+.experience-list li {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.social-buttons {
+    display: flex;
+}
+
+.social-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.social-button:hover {
+    background-color: #f0f0f0; /* Change to a subtle blue color */
+    color: #333; /* Adjust text color for better contrast */
+}
