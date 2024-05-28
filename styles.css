@@ -1,3 +1,11 @@
+:root {
+    /* Body styles */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -5,7 +13,7 @@ body {
     color: #333;
 }
 
-header {
+.header {
     background-color: #000;
     /* Black background */
     color: #fff;
@@ -45,7 +53,9 @@ header {
 }
 
 .buttons {
-    margin-top: 20px;
+    opacity: 0;
+    /* Initially hidden */
+    margin-top: 30px;
 }
 
 .btn {
@@ -84,17 +94,9 @@ section {
     margin-bottom: 40px;
 }
 
-footer {
-    background-color: #007BFF;
-    /* Blue background */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    header {
+    .header {
         height: 100vh;
         /* Full screen height for mobile */
     }
@@ -130,3 +132,87 @@ footer {
         /* Space between buttons on mobile */
     }
 }
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-visible {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    /* Adjust transition duration */
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    /* Base styles */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    /* Light gray background */
+    color: #333;
+}
+
+header {
+    background-color: #000;
+    /* Black header */
+    color: #fff;
+    padding: 15px 0;
+    display: flex;
+    /* Make header a flexbox container */
+}
+
+.header-content {
+    display: flex;
+    /* Make content a flexbox container */
+    align-items: center;
+    /* Align items vertically */
+    width: 100%;
+    /* Set width to 100% for proper alignment */
+}
+
+.logo {
+    flex: 1;
+    /* Allow logo to grow and fill remaining space */
+    text-decoration: none;
+    /* Remove underline from link */
+    color: #fff;
+    /* Make logo text white to match header color */
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    /* Align navigation items to the right */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
