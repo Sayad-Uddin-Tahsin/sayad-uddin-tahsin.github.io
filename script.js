@@ -15,17 +15,19 @@ const typewriterEffect = (text, element) => {
 };
 
 window.addEventListener('load', () => {
-    typewriterEffect('Sayad Uddin Tahsin', typedText);
-    typewriterEffect('Passionate Software Developer and Tech Enthusiast', typedDescription);
-    setTimeout(() => {
-        buttons.classList.add('fade-visible');
-    }, 1000);
+    const currentUrl = window.location.href;
+    if (currentUrl.endsWith('/') || currentUrl.includes('index.html')) {
+        // Specific logic for index.html
+        typewriterEffect('Sayad Uddin Tahsin', typedText);
+        typewriterEffect('Passionate Software Developer and Tech Enthusiast', typedDescription);
+        setTimeout(() => {
+            buttons.classList.add('fade-visible');
+        }, 1000);
+    }
+
+    const ogUrlElement = document.getElementById('og-url');
+    if (ogUrlElement) {
+        ogUrlElement.content = currentUrl;
+    }
+
 });
-
-const currentUrl = window.location.href;
-
-const ogUrlElement = document.getElementById('og-url');
-ogUrlElement.content = currentUrl;
-
-const mobileMenu = document.getElementById('mobile-menu');
-const nav = document.getElementById('nav');

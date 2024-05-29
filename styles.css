@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     /* Body styles */
     margin: 0;
@@ -58,7 +62,6 @@ body {
 
 .buttons {
     opacity: 0;
-    /* Initially hidden */
     margin-top: 30px;
 }
 
@@ -66,15 +69,17 @@ body {
     display: inline-block;
     padding: 10px 20px;
     margin-right: 10px;
+    margin-bottom: 10px;
     border: 2px solid #ccc;
     border-radius: 20px;
     text-decoration: none;
-    color: #fff; /* Darker text color */
+    color: #fff;
+    /* Darker text color */
     transition: background-color 0.3s, color 0.3s;
 }
 
 .rounded-btn:hover {
-    background-color: #ccc;
+    background-color: #9a9996;
     color: #fff;
 }
 
@@ -147,6 +152,9 @@ section {
         margin-bottom: 10px;
         /* Space between buttons on mobile */
     }
+    .rounded-btn {
+        margin-right: 5px;
+    }
 }
 
 .fade-in {
@@ -168,6 +176,11 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    /* font-family: "Open Sans", sans-serif; */
+    font-size: 1em;
+    letter-spacing: 2px;
+    line-height: 150%;
 }
 
 main {
@@ -192,20 +205,22 @@ header .header-content {
 header .logo {
     color: #fff;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
+    font-family: "Kalam", cursive;
 }
 
 .about-black-region {
     background-color: #000;
-    /* Black background */
     color: #fff;
     height: 25vh;
-    /* Full screen height */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Center content horizontally */
+}
+
+.about-black-region h1 {
+    font-family: "Poppins", sans-serif;;
 }
 
 .skills,
@@ -293,6 +308,8 @@ header .logo {
 }
 
 .social-button:hover {
-    background-color: #f0f0f0; /* Change to a subtle blue color */
-    color: #333; /* Adjust text color for better contrast */
+    background-color: #f0f0f0;
+    /* Change to a subtle blue color */
+    color: #333;
+    /* Adjust text color for better contrast */
 }
