@@ -1,3 +1,4 @@
-RewriteEngine on
+RewriteEngine On
 
- RewriteRule ^about about.html [NC, L]
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([^.]+)$ $1.html [NC,L]
