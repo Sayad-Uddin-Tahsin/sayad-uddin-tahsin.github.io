@@ -16,7 +16,7 @@ const typewriterEffect = (text, element) => {
 
 window.addEventListener('load', () => {
     const currentUrl = window.location.href;
-    if (currentUrl.endsWith('/') || currentUrl.includes('index.html')) {
+    if (typedText && typedDescription && buttons) {
         // Specific logic for index.html
         typewriterEffect('Sayad Uddin Tahsin', typedText);
         typewriterEffect('Passionate Software Developer and Tech Enthusiast', typedDescription);
