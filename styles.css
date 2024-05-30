@@ -49,7 +49,6 @@ body {
 .intro-text {
     max-width: 50%;
     /* Adjust max-width for better spacing */
-    font-family: "Montserrat", sans-serif;
 }
 
 
@@ -142,7 +141,7 @@ section {
     }
 
     .intro-text h1 {
-        font-size: 1.8em;
+        font-size: 2em;
         /* Smaller font size for mobile */
     }
 
@@ -229,9 +228,9 @@ header .logo {
     ;
 }
 
-.bio {
+/*.bio {
     font-family: "Open Sans", sans-serif;
-}
+} */
 
 .skills,
 .hobbies,
@@ -239,16 +238,8 @@ header .logo {
 .reach-me-at {
     margin-bottom: 40px;
     text-align: left;
-    font-family: "Open Sans", sans-serif;
 }
 
-.skills,
-.hobbies,
-.expreiences,
-.reach-me-at h2 {
-    font-family: "Montserrat", sans-serif;
-
-}
 .skills .skill-list li {
     padding: 5px;
     border-radius: 5px;
