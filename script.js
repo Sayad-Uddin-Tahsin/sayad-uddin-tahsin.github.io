@@ -1,4 +1,4 @@
-const typedText = document.getElementById('typed-text');
+const typedTitle = document.getElementById('typed-text');
 const typedDescription = document.getElementById('typed-description');
 const buttons = document.querySelector('.buttons');
 
@@ -15,19 +15,12 @@ const typewriterEffect = (text, element) => {
 };
 
 window.addEventListener('load', () => {
-    const currentUrl = window.location.href;
-    if (typedText && typedDescription && buttons) {
+    if (typedTitle && typedDescription && buttons) {
         // Specific logic for index.html
-        typewriterEffect('Sayad Uddin Tahsin', typedText);
+        typewriterEffect('Sayad Uddin Tahsin', typedTitle);
         typewriterEffect('Passionate Software Developer and Tech Enthusiast', typedDescription);
         setTimeout(() => {
             buttons.classList.add('fade-visible');
         }, 1000);
     }
-
-    const ogUrlElement = document.getElementById('og-url');
-    if (ogUrlElement) {
-        ogUrlElement.content = currentUrl;
-    }
-
 });
