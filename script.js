@@ -34,7 +34,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var profilePic = document.querySelector('.profile-pic');
     if (profilePic) {
         profilePic.addEventListener('load', function() {
-            profilePic.classList.add('loaded');
+            setTimeout(() => {
+                profilePic.classList.add('loaded');
+            }, 100);
         });
     };
 });
@@ -49,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         blackRegion.style.height = '25vh';
         fadeInSection.classList.add('show');
     }
-    
+
     if (header) {
         header.classList.add('show');
     }
