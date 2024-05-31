@@ -32,9 +32,11 @@ window.addEventListener('load', () => {
 
 document.addEventListener("DOMContentLoaded", function() {
     var profilePic = document.querySelector('.profile-pic');
+    console.log(profilePic);
     if (profilePic) {
         profilePic.addEventListener('load', function() {
             setTimeout(() => {
+                console.log("Loaded Added!")
                 profilePic.classList.add('loaded');
             }, 100);
         });
