@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     /* Body styles */
@@ -103,6 +101,13 @@ body {
     width: 250px;
     /* Adjust image size */
     height: 250px;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.profile-pic.loaded {
+    opacity: 1;
 }
 
 main {
@@ -192,10 +197,17 @@ main {
 }
 
 header {
-    background-color: #000;
-    color: #fff;
+    background-color: transparent;
+    color: #000;
     padding: 15px 0;
     text-align: left;
+    opacity: 0;
+    transition: background-color 0s ease, opacity 1s ease;
+}
+
+header.show {
+    background-color: #000;
+    opacity: 1;
 }
 
 header .header-content {
@@ -214,23 +226,35 @@ header .logo {
     font-family: "Kalam", cursive;
 }
 
-.about-black-region {
+.black-region {
     background-color: #000;
     color: #fff;
-    height: 25vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    transition: height 1s ease, opacity 1s ease;
 }
 
-.about-black-region h1 {
+
+.black-region h1 {
     font-family: "Poppins", sans-serif;
     ;
 }
 
-/*.bio {
-    font-family: "Open Sans", sans-serif;
-} */
+.fade-in-page-title {
+    opacity: 0;
+    /* Initially hide the section */
+    transition: opacity 1s ease;
+    /* Apply transition to opacity property */
+}
+
+.fade-in-page-title.show {
+    opacity: 1;
+    /* Once shown, fade in the section */
+}
+
 
 .skills,
 .hobbies,
@@ -282,7 +306,6 @@ header .logo {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1em;
     font-size: 1em;
     font-weight: bold;
     text-decoration: none;
