@@ -36,20 +36,15 @@ document.addEventListener("DOMContentLoaded", function() {
     if (profilePic) {
         // Check if the image is already loaded
         if (profilePic.complete) {
-            setTimeout(() => {
-                console.log("Loaded Added!")
-                profilePic.classList.add('loaded');
-            }, 100);
+            profilePic.classList.add('loaded');
         } else {
             profilePic.onload = function() {
-                setTimeout(() => {
-                    console.log("Loaded Added!")
-                    profilePic.classList.add('loaded');
-                }, 100);
+                profilePic.classList.add('loaded');
             };
         }
     }
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
