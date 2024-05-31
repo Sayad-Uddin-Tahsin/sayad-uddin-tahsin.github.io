@@ -34,14 +34,23 @@ document.addEventListener("DOMContentLoaded", function() {
     var profilePic = document.querySelector('.profile-pic');
     console.log(profilePic);
     if (profilePic) {
-        profilePic.addEventListener('load', function() {
+        // Check if the image is already loaded
+        if (profilePic.complete) {
             setTimeout(() => {
                 console.log("Loaded Added!")
                 profilePic.classList.add('loaded');
             }, 100);
-        });
-    };
+        } else {
+            profilePic.onload = function() {
+                setTimeout(() => {
+                    console.log("Loaded Added!")
+                    profilePic.classList.add('loaded');
+                }, 100);
+            };
+        }
+    }
 });
+
 
 document.addEventListener("DOMContentLoaded", function() {
     var blackRegion = document.querySelector('.black-region');
