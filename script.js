@@ -32,9 +32,7 @@ window.addEventListener('load', () => {
 
 document.addEventListener("DOMContentLoaded", function() {
     var profilePic = document.querySelector('.profile-pic');
-    console.log(profilePic);
     if (profilePic) {
-        // Check if the image is already loaded
         if (profilePic.complete) {
             profilePic.classList.add('loaded');
         } else {
@@ -61,4 +59,47 @@ document.addEventListener("DOMContentLoaded", function() {
     if (header) {
         header.classList.add('show');
     }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const projects = document.querySelectorAll('.project');
+    let currentExpandedProject = null;
+
+    projects.forEach(project => {
+        const fullDescription = project.querySelector('.full-description');
+        const buttons = project.querySelector('.project-buttons');
+
+        project.addEventListener('click', () => {
+            if (project.classList.contains('expanded')) {
+                fullDescription.style.maxHeight = null;
+                project.classList.remove('expanded');
+                if (buttons) {
+                    buttons.style.maxHeight = "0";
+                    buttons.style.overflow = "hidden";
+                    console.log("Buttons hidden");
+                }
+                currentExpandedProject = null;
+            } else {
+                if (currentExpandedProject) {
+                    const prevFullDescription = currentExpandedProject.querySelector('.full-description');
+                    prevFullDescription.style.maxHeight = null;
+                    currentExpandedProject.classList.remove('expanded');
+                    const prevButtons = currentExpandedProject.querySelector('.project-buttons');
+                    if (prevButtons) {
+                        prevButtons.style.maxHeight = "0";
+                        prevButtons.style.overflow = "hidden";
+                        console.log("Previous buttons hidden");
+                    }
+                }
+                fullDescription.style.maxHeight = fullDescription.scrollHeight + "px";
+                project.classList.add('expanded');
+                if (buttons) {
+                    buttons.style.maxHeight = "100%";
+                    buttons.style.overflow = "visible";
+                    console.log("Buttons shown");
+                }
+                currentExpandedProject = project;
+            }
+        });
+    });
 });

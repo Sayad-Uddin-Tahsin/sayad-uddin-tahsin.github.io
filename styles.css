@@ -111,7 +111,7 @@ body {
 }
 
 main {
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
 section {
@@ -132,13 +132,9 @@ section {
 
     .intro-image {
         order: -1;
-        /* Move the image to the top */
         margin-right: 0;
-        /* Remove margin for mobile */
         margin-bottom: 20px;
-        /* Space between image and text */
         max-width: 100%;
-        /* Ensure the image does not exceed container width */
     }
 
     .intro-text {
@@ -147,18 +143,15 @@ section {
 
     .intro-text h1 {
         font-size: 2em;
-        /* Smaller font size for mobile */
     }
 
     .profile-pic {
         width: 200px;
-        /* Adjust image size for mobile */
         height: 200px;
     }
 
     .btn {
         margin-bottom: 10px;
-        /* Space between buttons on mobile */
     }
 
     .rounded-btn {
@@ -174,7 +167,6 @@ section {
 .fade-visible {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
-    /* Adjust transition duration */
 }
 
 footer {
@@ -192,9 +184,6 @@ footer {
     font-weight: bold;
 }
 
-main {
-    padding: 40px 0;
-}
 
 header {
     background-color: transparent;
@@ -245,16 +234,16 @@ header .logo {
 
 .fade-in-page-title {
     opacity: 0;
-    /* Initially hide the section */
     transition: opacity 1s ease;
-    /* Apply transition to opacity property */
 }
 
 .fade-in-page-title.show {
     opacity: 1;
-    /* Once shown, fade in the section */
 }
 
+p {
+    line-height: 150%
+}
 
 .skills,
 .hobbies,
@@ -262,6 +251,13 @@ header .logo {
 .reach-me-at {
     margin-bottom: 40px;
     text-align: left;
+}
+
+.skills,
+.hobbies,
+.expreiences,
+.reach-me-at p{
+    line-height: 150%
 }
 
 .skills .skill-list li {
@@ -300,7 +296,6 @@ header .logo {
 
 .experience-button {
     background-color: var(--button-color);
-    /* Use custom button color */
     padding: 10px 20px;
     color: #fff;
     border: none;
@@ -312,11 +307,9 @@ header .logo {
     text-align: center;
 }
 
-/* Ensure the button expands horizontally */
 .experience-button {
     flex-grow: 1;
     margin-left: 10px;
-    /* Adjust margin as needed */
 }
 
 .experience-list li {
@@ -332,6 +325,7 @@ header .logo {
     display: inline-block;
     padding: 10px 20px;
     margin-right: 10px;
+    margin-bottom: 10px;
     border: 2px solid #ccc;
     border-radius: 20px;
     text-decoration: none;
@@ -341,7 +335,80 @@ header .logo {
 
 .social-button:hover {
     background-color: #f0f0f0;
-    /* Change to a subtle blue color */
     color: #333;
-    /* Adjust text color for better contrast */
 }
+
+.pr-container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.project {
+    position: relative;
+    flex-direction: column;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project-info {
+    overflow: visible; /* Allow buttons to overflow */
+}
+
+.project h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    max-width: 80%;
+    white-space: normal;
+}
+
+.short-description {
+    cursor: pointer;
+}
+
+.full-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.project-image {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 850px) {
+  .pr-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+}
+
+@media (max-width: 849px) {
+    .pr-container {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .project-image {
+        display: none;
+    }
+}
+
