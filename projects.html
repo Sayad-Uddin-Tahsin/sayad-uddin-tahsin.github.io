@@ -27,6 +27,31 @@
     <meta name="twitter:title" content="Projects - Sayad Uddin Tahsin">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <script>
+        // Fetch data for WiFileShare
+        fetch('https://api.github.com/repos/Sayad-Uddin-Tahsin/WiFileShare/releases/latest')
+        .then(response => response.json())
+        .then(data => {
+            const assets = data.assets;
+            if (assets.length > 0) {
+                const downloadUrl = assets[0].browser_download_url;
+                document.getElementById('download-wifileshare').setAttribute('href', downloadUrl);
+            }
+        })
+
+        // Fetch data for IPCom
+        fetch('https://api.github.com/repos/Sayad-Uddin-Tahsin/IPCom/releases/latest')
+        .then(response => response.json())
+        .then(data => {
+            const assets = data.assets;
+            if (assets.length > 0) {
+                const downloadUrl = assets[0].browser_download_url;
+                document.getElementById('download-ipcom').setAttribute('href', downloadUrl);
+            }
+        })
+    </script>
+
 </head>
 
 <body>
@@ -58,10 +83,23 @@
                         applications, offering users a diverse and comprehensive view of current events. Empower your
                         audience with timely and reliable information, curated by one of the most respected news
                         organizations worldwide.</p>
+
+                    <div>
+                        <a href="https://bbc-api.vercel.app" class="project-button" target="_blank">
+                            <img src="https://raw.githubusercontent.com/Sayad-Uddin-Tahsin/BBC-News-API/main/Assets/Light%20Logo.png" height="15" width="15"> API Endpoint
+                        </a>
+                        <a href="https://pypi.org/project/bbc-news" class="project-button" target="_blank">
+                            <img src="https://seeklogo.com/images/P/pypi-logo-5B953CE804-seeklogo.com.png" height="15" width="15"> Checkout on PyPI
+                        </a>
+                        <a href="https://github.com/Sayad-Uddin-Tahsin/BBC-News-API" class="project-button">
+                            <i class="fab fa-github"></i> View Source Code
+                        </a>
+                    </div>
                 </div>
 
             </div>
         </div>
+        
         <div class="project">
             <div class="project-info">
                 <h2>WiFileShare</h2>
@@ -75,10 +113,20 @@
                         of transferring files between connected devices, eliminating the reliance on external internet
                         connections. Whether you're collaborating on a project or simply sharing media files with
                         friends, WiFileShare ensures a hassle-free experience.</p>
-
+                    
+                    <div>
+                        <a id="download-wifileshare" href="https://github.com/Sayad-Uddin-Tahsin/WiFileShare/releases/latest" class="project-button">
+                            <i class="fas fa-download"></i> Download WiFileShare
+                        </a>
+                        
+                        <a href="https://github.com/Sayad-Uddin-Tahsin/WiFileShare" class="project-button">
+                            <i class="fab fa-github"></i> View Source Code
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+        
         <div class="project">
             <div class="project-info">
                 <h2>Rotary School Student Manager</h2>
@@ -86,12 +134,61 @@
                     alt="RSK Software" class="project-image">
                 <p class="short-description">Rotary School Student Manager is a software made for Rotary School Khulna
                     for organizing the Student Information in a Digital Way!</p>
-                <p class="full-description">Rotary School Student Manager is a software made for organizing the Student
+                <div class="full-description">
+                    <p>Rotary School Student Manager is a software made for organizing the Student
                     Information with this software, Student Information can be easily managed for different classes and
                     sections in the cloud making it accessable from anywhere in the Globe.</p>
+
+                    <div>
+                        <a href="https://github.com/Sayad-Uddin-Tahsin/WiFileShare" class="project-button" target="_blank">
+                            <i class="fab fa-github"></i> View Source Code
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <div class="project">
+            <div class="project-info">
+                <h2>IPCom</h2>
+                <img src="https://raw.githubusercontent.com/Sayad-Uddin-Tahsin/IPCom/main/Assets/IPCom.png"
+                    alt="IPCom" class="project-image">
+                <p class="short-description">IPCom is an offline messaging application that doesn’t require internet but the same Wi-Fi connection.</p>
+                <div class="full-description">
+                    <p>It uses IP to send messages between devices. This makes it ideal for situations where there is no internet connection available but you still need to communicate with others. The matter is to have on same Network!</p>
+
+                    <div>
+                        <a id="download-ipcom" href="https://github.com/Sayad-Uddin-Tahsin/IPCom/releases/latest" class="project-button">
+                            <i class="fas fa-download"></i> Download IPCom
+                        </a>
+
+                        <a href="https://github.com/Sayad-Uddin-Tahsin/IPCom" class="project-button">
+                            <i class="fab fa-github" target="_blank"></i> View Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-info">
+                <h2>sra-pylib</h2>
+                <p class="short-description">A Wrapper of some-random-api for Python</p>
+                <div class="full-description">
+                    <p>With sra-pylib, you can easily access the various endpoints of some-random-api in your Python projects, making it a powerful tool for working with image, fact, and other types of data.</p>
+
+                    <div>
+                        <a href="https://pypi.org/project/sra-pylib" class="project-button" target="_blank">
+                            <img src="https://seeklogo.com/images/P/pypi-logo-5B953CE804-seeklogo.com.png" height="15" width="15"> Checkout on PyPI
+                        </a>
+                        <a href="https://github.com/Sayad-Uddin-Tahsin/sra-pylib" class="project-button">
+                            <i class="fab fa-github" target="_blank"></i> View Source Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </main>
 
     <footer>
