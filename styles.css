@@ -7,10 +7,6 @@
     font-family: "Arial", sans-serif;
     background-color: #f4f4f9;
     color: #333;
-    --primary-color: #2E8B57;
-    /* Dark green */
-    --button-color: #4682B4;
-    /* Steel blue */
 }
 
 body {
@@ -69,7 +65,7 @@ body {
 .rounded-btn {
     display: inline-block;
     padding: 10px 20px;
-    margin-right: 10px;
+    margin-right: 7.5px;
     margin-bottom: 10px;
     border: 2px solid #ccc;
     border-radius: 20px;
@@ -256,7 +252,7 @@ p {
 .skills,
 .hobbies,
 .expreiences,
-.reach-me-at p{
+.reach-me-at p {
     line-height: 150%
 }
 
@@ -295,7 +291,7 @@ p {
 
 
 .experience-button {
-    background-color: var(--button-color);
+    background-color: #6495d5;
     padding: 10px 20px;
     color: #fff;
     border: none;
@@ -361,7 +357,8 @@ p {
 }
 
 .project-info {
-    overflow: visible; /* Allow buttons to overflow */
+    overflow: visible;
+    /* Allow buttons to overflow */
 }
 
 .project h2 {
@@ -379,6 +376,7 @@ p {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
+    margin-top: -15px;
 }
 
 .project-image {
@@ -392,12 +390,11 @@ p {
 }
 
 @media (min-width: 850px) {
-  .pr-container {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(2, 1fr);
-    
-  }
+    .pr-container {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 849px) {
@@ -407,8 +404,47 @@ p {
 }
 
 @media (max-width: 400px) {
+    .project {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center the content */
+    }
+
+    .project-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center the content */
+    }
+
     .project-image {
-        display: none;
+        position: static;
+        order: -1;
+        max-width: 60px;
+        max-height: 60px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .project h2 {
+        text-align: center;
     }
 }
 
+.project-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.project-buttons:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
