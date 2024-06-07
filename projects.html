@@ -50,6 +50,17 @@
                 document.getElementById('download-ipcom').setAttribute('href', downloadUrl);
             }
         })
+        
+        // Fetch data for FileCrypter
+        fetch('https://api.github.com/repos/Sayad-Uddin-Tahsin/FileCrypter/releases/latest')
+        .then(response => response.json())
+        .then(data => {
+            const assets = data.assets;
+            if (assets.length > 0) {
+                const downloadUrl = assets[0].browser_download_url;
+                document.getElementById('download-filecrypter').setAttribute('href', downloadUrl);
+            }
+        })
     </script>
 
 </head>
@@ -170,6 +181,24 @@
             </div>
         </div>
 
+        <div class="project">
+            <div class="project-info">
+                <h2>FileCrypter</h2>
+                <img src="https://raw.githubusercontent.com/Sayad-Uddin-Tahsin/FileCrypter/main/FileCrypter.png"
+                    alt="FileCrypter" class="project-image">
+                <p class="short-description">FileCrypter is an encryption and decryption application with live tracking, empowering users to secure their files and directories with ease.</p>
+                <div class="full-description">
+                    <p>FileCrypter is a powerful file encryption tool designed to provide enhanced security for your sensitive files. With FileCrypter, you can easily encrypt and decrypt your files using advanced encryption algorithms, ensuring that only authorized individuals can access the encrypted data.</p>
+
+                    <div>
+                        <a id="download-filecrypter" href="https://github.com/Sayad-Uddin-Tahsin/FileCrypter/releases/latest" class="project-button">
+                            <i class="fas fa-download"></i> Download FileCrypter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="project">
             <div class="project-info">
                 <h2>sra-pylib</h2>
