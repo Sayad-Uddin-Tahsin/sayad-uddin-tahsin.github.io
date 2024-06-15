@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .error-message {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #f44336;
+            /* Red color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            /* Text shadow for better visibility */
+
+        }
+
+        .redirect-message {
+            font-size: 18px;
+            position: relative;
+            margin-top: 40px;
+            color: #cccccc;
+        }
+
+        .cursor {
+            display: inline;
+            width: 2px;
+            height: 16px;
+            background-color: #ffcc00;
+            margin-left: 2px;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-message">Seems you're lost!?</div>
+    <div id="countdown-container" class="redirect-message">
+        Taking you home in <span id="countdown" style="color: #ffcc00; font-family: " Inconsolata",
+            monospace;">7</span><span class="cursor" id="cursor" style="color: #ffcc00; font-family: " Inconsolata",
+            monospace;">|</span> seconds...
+    </div>
+    <script>
+        // Countdown function
+        let countdownElement = document.getElementById('countdown');
+        let cursorElement = document.getElementById('cursor');
+        let countdownValue = 7;
+
+        const countdownInterval = setInterval(() => {
+            cursorElement.style.display = 'none';
+            setTimeout(() => {
+                countdownElement.textContent = '';
+                setTimeout(() => {
+                    countdownValue--;
+                    countdownElement.textContent = countdownValue;
+                    cursorElement.style.display = 'inline';
+                    if (countdownValue === 1) {
+                        clearInterval(countdownInterval);
+                        // window.location.href = '/';
+                    }
+                }, 200);
+            }, 800);
+        }, 1000);
+    </script>
+</body>
+
+</html>
