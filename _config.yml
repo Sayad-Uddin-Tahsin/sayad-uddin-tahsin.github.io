@@ -1,5 +1,2 @@
 # Remove .html extension from URLs
 permalink: /:title
-
-# Custom 404 page configuration
-permalink: /error-pages/404.html
