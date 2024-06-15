@@ -68,8 +68,8 @@
 <body>
     <div class="error-message">Seems you're lost!?</div>
     <div id="countdown-container" class="redirect-message">
-        Taking you home in <span id="countdown" style="color: #ffcc00; font-family: " Inconsolata",
-            monospace;">5</span><span class="cursor" id="cursor" style="color: #ffcc00; font-family: " Inconsolata",
+        Taking you home in <span id="countdown" style="color: #ffcc00; font-family: 'Inconsolata',
+            monospace;">5</span><span class="cursor" id="cursor" style="color: #ffcc00; font-family: 'Inconsolata',
             monospace;">|</span> seconds...
     </div>
     <script>
@@ -88,6 +88,8 @@
                     cursorElement.style.display = 'inline';
                     if (countdownValue === 1) {
                         clearInterval(countdownInterval);
+                    }
+                    if (countdownValue === 0) {
                         window.location.href = '/';
                     }
                 }, 200);
