@@ -69,14 +69,14 @@
     <div class="error-message">Seems you're lost!?</div>
     <div id="countdown-container" class="redirect-message">
         Taking you home in <span id="countdown" style="color: #ffcc00; font-family: " Inconsolata",
-            monospace;">7</span><span class="cursor" id="cursor" style="color: #ffcc00; font-family: " Inconsolata",
+            monospace;">5</span><span class="cursor" id="cursor" style="color: #ffcc00; font-family: " Inconsolata",
             monospace;">|</span> seconds...
     </div>
     <script>
         // Countdown function
         let countdownElement = document.getElementById('countdown');
         let cursorElement = document.getElementById('cursor');
-        let countdownValue = 7;
+        let countdownValue = 5;
 
         const countdownInterval = setInterval(() => {
             cursorElement.style.display = 'none';
@@ -88,7 +88,7 @@
                     cursorElement.style.display = 'inline';
                     if (countdownValue === 1) {
                         clearInterval(countdownInterval);
-                        // window.location.href = '/';
+                        window.location.href = '/';
                     }
                 }, 200);
             }, 800);
