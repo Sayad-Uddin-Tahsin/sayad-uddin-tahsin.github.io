@@ -33,9 +33,14 @@
         document.addEventListener("DOMContentLoaded", function() {
             var currentUrl = window.location.href;
             if (currentUrl.includes("github.io") && currentUrl.endsWith(".html")) {
-            var newUrl = currentUrl.replace(/\.html$/, '');
-            window.history.replaceState(null, null, newUrl);
+                if (currentUrl.endsWith("index.html")) {
+                    var newUrl = currentUrl.replace(/index\.html$/, '');
+            } else {
+                var newUrl = currentUrl.replace(/\.html$/, '');
             }
+            window.history.replaceState(null, null, newUrl);
+        }
+
         });
     </script>
 </head>
