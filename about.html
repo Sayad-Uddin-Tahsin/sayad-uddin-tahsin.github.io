@@ -33,6 +33,7 @@
             if (currentUrl.includes("github.io") && currentUrl.endsWith(".html")) {
                 var newUrl = currentUrl.replace(/\.html$/, '');
 
+                // Ensure we are not adding an extra '/'
                 if (newUrl.endsWith('/')) {
                     newUrl = newUrl.slice(0, -1);
                 }
