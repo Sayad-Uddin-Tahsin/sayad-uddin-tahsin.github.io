@@ -28,6 +28,16 @@
     <meta name="twitter:title" content="Sayad Uddin Tahsin">
 
     <meta name="google-site-verification" content="u1FZHw5fbo87OsrmQtEQBvq6MXlzFk4R6snbhznCah4" />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var currentUrl = window.location.href;
+            if (currentUrl.includes("github.io") && currentUrl.endsWith(".html")) {
+            var newUrl = currentUrl.replace(/\.html$/, '');
+            window.history.replaceState(null, null, newUrl);
+      }
+    });
+    </script>
 </head>
 
 <body>
