@@ -34,14 +34,16 @@
             var currentUrl = window.location.href;
             if (currentUrl.includes("github.io")) {
                 var newUrl;
-                if (currentUrl.endsWith("index.html") || currentUrl.endsWith("index")) {
-                    newUrl = currentUrl.replace(/index(\.html)?$/, '');
-                    if (!newUrl.endsWith('/')) {
-                        newUrl += '/';
-                    }
-                    if (newUrl && newUrl !== currentUrl) {
-                        window.history.replaceState(null, null, newUrl);
-                    }
+                if (currentUrl.endsWith("index.html")) {
+                    newUrl = currentUrl.replace(/index\.html$/, '');
+                } else if (currentUrl.endsWith("index")) {
+                    newUrl = currentUrl.replace(/index$/, '');
+                }
+                if (newUrl && !newUrl.endsWith('/')) {
+                    newUrl += '/';
+                }
+                if (newUrl && newUrl !== currentUrl) {
+                    window.history.replaceState(null, null, newUrl);
                 }
             }
         });
