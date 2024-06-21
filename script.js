@@ -1,3 +1,32 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var currentUrl = window.location.href;
+    var newUrl = currentUrl;
+
+    if (currentUrl.includes("github.io")) {
+        // Handle index.html or index
+        if (currentUrl.endsWith("index.html")) {
+            newUrl = currentUrl.replace(/index\.html$/, '');
+        } else if (currentUrl.endsWith("index")) {
+            newUrl = currentUrl.replace(/index$/, '');
+        }
+
+        // Ensure URL ends with a '/'
+        if (!newUrl.endsWith('/')) {
+            newUrl += '/';
+        }
+
+        // Handle other .html extensions
+        if (currentUrl.endsWith(".html") && !currentUrl.endsWith("index.html")) {
+            newUrl = newUrl.replace(/\.html$/, '');
+        }
+
+        // Redirect to the new URL if it has been modified
+        if (newUrl !== currentUrl) {
+            window.history.replaceState(null, null, newUrl);
+        }
+    }
+});
+
 const typedTitle = document.getElementById('typed-text');
 const typedDescription = document.getElementById('typed-description');
 const buttons = document.querySelector('.buttons');
