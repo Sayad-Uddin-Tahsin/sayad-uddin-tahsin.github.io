@@ -62,18 +62,21 @@
             }
         })
     </script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-           var currentUrl = window.location.href;
-           if (currentUrl.includes("github.io") && currentUrl.endsWith(".html")) {
-               if (currentUrl.split('/').slice(-1)[0].indexOf('.') === -1) {
-                   var newUrl = currentUrl.replace(/\.html$/, '');
-                   if (newUrl !== currentUrl) {
-                       window.history.replaceState(null, null, newUrl);
-                   }
-               }
-           }
-       });
+            // Get the current URL
+            var currentUrl = window.location.href;
+            
+            // Check if the URL ends with github.io and contains .html
+            if (currentUrl.includes("github.io") && currentUrl.endsWith(".html")) {
+                // Remove the .html extension
+                var newUrl = currentUrl.replace(/\.html$/, '');
+                
+                // Redirect to the new URL
+                window.history.replaceState(null, null, newUrl);
+            }
+        });
     </script>
 </head>
 
@@ -235,6 +238,8 @@
     <footer>
         <p>&copy; 2024 Sayad Uddin Tahsin<br>All Rights Reserved.</p>
     </footer>
+
+    <script src"script.js"></script>
 </body>
 
 </html>
