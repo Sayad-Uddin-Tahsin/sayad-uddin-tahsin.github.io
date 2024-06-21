@@ -32,13 +32,17 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var currentUrl = window.location.href;
-            if (currentUrl.includes("github.io") && currentUrl.endsWith(".html")) {
-                if (currentUrl.endsWith("index.html")) {
-                    var newUrl = currentUrl.replace(/index\.html$/, '');
-                } else {
-                    var newUrl = currentUrl.replace(/\.html$/, '');
+            if (currentUrl.includes("github.io")) {
+                var newUrl;
+                if (currentUrl.endsWith("index.html") || currentUrl.endsWith("index")) {
+                    newUrl = currentUrl.replace(/index(\.html)?$/, '');
+                    if (!newUrl.endsWith('/')) {
+                        newUrl += '/';
+                    }
+                    if (newUrl && newUrl !== currentUrl) {
+                        window.history.replaceState(null, null, newUrl);
+                    }
                 }
-                window.history.replaceState(null, null, newUrl);
             }
         });
     </script>
@@ -52,8 +56,8 @@
                     <h1 id="typed-text" data-typed="Sayad Uddin Tahsin"></h1>
                     <p id="typed-description" data-typed='Passionate Software Developer and Tech Enthusiast'></p>
                     <div class="buttons">
-                        <a href="/about" class="rounded-btn">About Me</a>
-                        <a href="/projects" class="rounded-btn">Projects</a>
+                        <a href="/about.html" class="rounded-btn">About Me</a>
+                        <a href="/projects.html" class="rounded-btn">Projects</a>
                         <a href="https://github.com/Sayad-Uddin-Tahsin" class="rounded-btn" target="_blank"><i
                                 class="fab fa-github"></i> GitHub</a>
                     </div>
