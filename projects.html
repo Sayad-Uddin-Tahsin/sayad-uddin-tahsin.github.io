@@ -63,21 +63,6 @@
         })
     </script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Get the current URL
-            var currentUrl = window.location.href;
-            
-            // Check if the URL ends with github.io and contains .html
-            if (currentUrl.includes("github.io") && currentUrl.endsWith(".html")) {
-                // Remove the .html extension
-                var newUrl = currentUrl.replace(/\.html$/, '');
-                
-                // Redirect to the new URL
-                window.history.replaceState(null, null, newUrl);
-            }
-        });
-    </script>
 </head>
 
 <body>
