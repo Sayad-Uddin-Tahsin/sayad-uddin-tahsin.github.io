@@ -33,16 +33,16 @@
         document.addEventListener("DOMContentLoaded", function() {
             var currentUrl = window.location.href;
             if (currentUrl.includes("github.io")) {
-                var newUrl;
+                var newUrl = currentUrl;
                 if (currentUrl.endsWith("index.html")) {
                     newUrl = currentUrl.replace(/index\.html$/, '');
                 } else if (currentUrl.endsWith("index")) {
                     newUrl = currentUrl.replace(/index$/, '');
                 }
-                if (newUrl && !newUrl.endsWith('/')) {
+                if (!newUrl.endsWith('/')) {
                     newUrl += '/';
                 }
-                if (newUrl && newUrl !== currentUrl) {
+                if (newUrl !== currentUrl) {
                     window.history.replaceState(null, null, newUrl);
                 }
             }
