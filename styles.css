@@ -388,6 +388,8 @@ p {
     max-height: 60px;
     border-radius: 5px;
     transition: transform 0.3s ease;
+    height: 55px;
+    width: 55px;
 }
 
 @media (min-width: 850px) {
