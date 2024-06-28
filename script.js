@@ -1,16 +1,17 @@
 var currentUrl = window.location.href;
 var newUrl = currentUrl;
 
-if (currentUrl.endsWith("index.html") || currentUrl.endsWith("index")) {
-    newUrl = currentUrl.replace(/index\.html$|index$/, '');
-} else if (window.location.pathname.endsWith(".html")) {
-    newUrl = currentUrl.replace(/\.html$/, '');
-}
+if (currentUrl.includes("github.io")) {
+    if (currentUrl.endsWith("index.html") || currentUrl.endsWith("index")) {
+        newUrl = currentUrl.replace(/index\.html$|index$/, '');
+    } else if (window.location.pathname.endsWith(".html")) {
+        newUrl = currentUrl.replace(/\.html$/, '');
+    }
 
-if (newUrl !== currentUrl) {
-    window.history.replaceState(null, null, newUrl);
+    if (newUrl !== currentUrl) {
+        window.history.replaceState(null, null, newUrl);
+    }
 }
-
 
 const typedTitle = document.getElementById('typed-text');
 const typedDescription = document.getElementById('typed-description');
