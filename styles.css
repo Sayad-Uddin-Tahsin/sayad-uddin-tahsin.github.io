@@ -315,6 +315,7 @@ p {
 
 .social-buttons {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .social-button {
